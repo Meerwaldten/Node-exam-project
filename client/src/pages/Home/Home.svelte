@@ -1,24 +1,17 @@
 <script>
     import { onMount } from "svelte";
     import { BASE_URL, myUsername } from "../../stores/globalStore";
-    import Login from "../Login/Login.svelte";
-
-    onMount(async () => {
-    const response = await fetch(`{$BASE_URL}/users/me`, {
-    credentials: "include"
-    });
-
-    const result = await response.json();
-    console.log(result);
-
-    myUsername.set(result.data.username);
-    });
+    import WelcomePage from "../Welcome/WelcomePage.svelte";
+    console.log("Current user logged in: " + $myUsername + " on homepage");
 </script>
 
+<section class="bg-gray-300">
 {#if $myUsername}
-<h1>Hej {($myUsername)}</h1>
+<h1 class="text-gray-400">Hej {$myUsername}, du er sej!</h1>
+<WelcomePage/>
 {:else}
-<Login/>
+<WelcomePage/>
 {/if}
+</section>
 
 

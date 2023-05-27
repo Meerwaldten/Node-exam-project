@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userScehema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
@@ -13,7 +13,12 @@ const userScehema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        required: true
     }
+
 });
 
-export const userModel = mongoose.model("user", userScehema);
+export const userModel = mongoose.model("user", userSchema);
