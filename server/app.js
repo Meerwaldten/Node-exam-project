@@ -12,8 +12,8 @@ const app = express();
 app.use(helmet());
 
 const corsMiddleware = cors({
-    credentials: true,
     origin: true,
+    credentials: true,
     methods: "*"
 })
 
@@ -50,17 +50,51 @@ import http from "http";
 const server = http.createServer(app);
 
 import { Server } from "socket.io";
-const io = new Server(server, {corsMiddleware});
 
-/*
-io.on("connection", (socket) => {
+const io = new Server(server, {
+    cors: {
+        origin: process.env.FRONTEND_PORT,
+        credentials: true,
+        methods: ["GET", "POST"],
+    },
 });
-*/
+
+
+const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
+io.use(wrap(sessionMiddleware));
+
+const latestSuggestions = [];
+
+
+io.on("connection", (socket) => {
+    console.log("Socket connected");
+
+    socket.emit("initial suggestions", latestSuggestions);
+
+    socket.on("character suggestion", (data) => {
+        console.log(data.message)
+        console.log(data.username)
+
+        latestSuggestions.push(data);
+
+        if (latestSuggestions.length > 5) {
+            latestSuggestions.shift(); // Remove the oldest suggestion
+          }
+
+        io.emit("user suggested a character", data)
+    })
+
+    socket.on("suggestion to admin", (data) =>{
+        console.log(data.text);
+        console.log(data.username);
+        io.emit("admin received suggestion", data)
+    })
+
+
+
+});
 
 db;
 
-
-
-
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log("Server is running on port: ", PORT));
+server.listen(PORT, () => console.log("Server is running on port: ", PORT));

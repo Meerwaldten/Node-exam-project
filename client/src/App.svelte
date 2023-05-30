@@ -5,34 +5,33 @@
     import Signin from "../src/pages/Signin/Signin.svelte";
     import Home from "../src/pages/Home/Home.svelte";
     import Signup from "../src/pages/Signup/Signup.svelte";
-    import Dwarf from "../src/components/Races/Dwarf.svelte";
-    import Barbarian from "../src/components/Classes/Barbarian.svelte";
     import CreateCharacter from "../src/pages/CreateCharacter/CreateCharacter.svelte";
- 
-
-
+    import FindCharacter from "./pages/FindCharacter/FindCharacter.svelte";
+    import Suggestion from "./pages/Suggestion/Suggestion.svelte";
+  import Admin from "./pages/Admin/Admin.svelte";
 </script>
 
 <Navbar/>
 <Router>
-<Route path="/">
+  <Route path="/">
     <Home/>
   </Route>
   <Route path="/signin">
     <Signin/>
   </Route>
   <Route path="/signup">
-      <Signup/>
+    <Signup/>
   </Route>
-  <Route>
-    <Route path="createcharacter">
-      <CreateCharacter/>
-    </Route>
+  <Route path="createcharacter">
+    <CreateCharacter/>
   </Route>
-  <Route path="/dwarf">
-    <Dwarf/>
+  <Route path="/findcharacter">
+    <FindCharacter/>
   </Route>
-  <Route path="/barbarian">
-    <Barbarian/>
+  <Route path="/suggestion">
+    <Suggestion/>
+  </Route>
+  <Route path ="/admin">
+    <Admin/>
   </Route>
 </Router>

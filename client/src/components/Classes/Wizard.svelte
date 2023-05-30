@@ -10,16 +10,17 @@
     </Modal>
     */
 
-    const Features = "The Barbarian is a fierce warrior who taps into their primal instincts to unleash devastating attacks. They possess incredible strength and endurance, allowing them to shrug off wounds that would fell lesser warriors. Barbarians excel in close combat, wielding powerful melee weapons and unleashing furious rage upon their enemies.";
-    const Bonuses = "Barbarians are known for their exceptional physical prowess. They have a high hit point pool, making them resilient and capable of withstanding significant damage. They possess unparalleled strength, granting them bonus damage with melee weapons and the ability to deliver devastating critical strikes. Barbarians can also enter a state of rage, increasing their damage output and resistance to damage."
-    const Lore = "In the untamed wilderness and among fierce tribes, the Barbarians find their home. They hail from ancestral lands where survival depends on raw strength and primal instincts. These fierce warriors embrace their inner fury and channel it into battle, believing that true power lies in the heart of untamed rage. United by tribal bonds and fueled by an indomitable spirit, Barbarians are fearsome adversaries and unyielding allies."
+    const Features = "The Wizard is a master of arcane knowledge and spellcasting, delving into the secrets of the universe to wield magic. They are highly intelligent and skilled in manipulating the fundamental forces of magic. Wizards specialize in the study of spells and can cast a wide variety of magical effects.";
+    const Bonuses = "Wizards possess vast knowledge of spells and can learn and cast a diverse range of magical effects. They are skilled in arcane rituals and can create magical scrolls and items. Wizards excel in deciphering ancient texts, unraveling magical mysteries, and wielding devastating spells in combat. With their spellbooks as their constant companion, they are always prepared for any magical challenge.";
+    const Lore = "Wizards are the scholars and seekers of arcane knowledge, devoting their lives to studying the intricacies of magic and its many forms. They can be found in ancient towers, arcane libraries, and prestigious magical academies, pursuing enlightenment and the mastery of spellcraft. Wizards possess a deep understanding of the weave of magic, and their ability to harness and shape arcane energy makes them highly sought after and respected.";
+
 
 </script>
 
 <section class="text-gray-600 body-font bg-gray-300">
     <div class="container px-5 py-24 mx-auto flex flex-wrap">
       <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-        <img alt="feature" class="object-contain object-center h-full w-full" src="../images/barbarian.webp">
+        <img alt="feature" class="object-cover object-center h-full w-full" src="../images/wizard.jpg">
       </div>
       <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
         <div class="flex flex-col mb-10 lg:items-start items-center">

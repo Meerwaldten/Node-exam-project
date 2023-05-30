@@ -13,10 +13,6 @@ const characterSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    level: {
-        type: String,
-        required: true
-    },
     username: {
         type: String,
         required: true

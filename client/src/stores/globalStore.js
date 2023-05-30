@@ -2,15 +2,10 @@ import { readable, writable } from "svelte/store";
 
 export const BASE_URL = readable("http://localhost:8080");
 
-//export const myUsername = writable();
+export const myUsername = writable();
 
-export const myUsername = writable(getStoredUsername());
+export const isUserAdmin = writable();
 
-function getStoredUsername() {
-  const storedUsername = localStorage.getItem("myUsername");
-  return storedUsername ? JSON.parse(storedUsername) : null;
-}
+export const suggestionList = writable([]);
 
-myUsername.subscribe((value) => {
-  localStorage.setItem("myUsername", JSON.stringify(value));
-});
+export const characterSuggestionList = writable([]);
