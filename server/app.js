@@ -61,6 +61,10 @@ const wrap = middleware => (socket, next) => middleware(socket.request, {}, next
 io.use(wrap(sessionMiddleware));
 
 const latestSuggestions = [];
+const latestAdminSuggestions = [];
+
+latestSuggestions.length = 0;
+latestAdminSuggestions.length = 0;
 
 
 io.on("connection", (socket) => {
@@ -70,6 +74,7 @@ io.on("connection", (socket) => {
 
     socket.on("character suggestion", (data) => {
         latestSuggestions.push(data);
+        console.log(latestSuggestions);
 
         if(latestSuggestions.length > 5) {
             latestSuggestions.shift();
@@ -77,7 +82,12 @@ io.on("connection", (socket) => {
         io.emit("user suggested a character", data)
     })
 
+
+    socket.emit("initial admin suggestions", latestAdminSuggestions);
+
     socket.on("suggestion to admin", (data) =>{
+        latestAdminSuggestions.push(data)
+        console.log(latestAdminSuggestions)
         console.log(data.text);
         console.log(data.username);
         io.emit("admin received suggestion", data)

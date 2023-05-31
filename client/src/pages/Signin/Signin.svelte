@@ -1,5 +1,5 @@
 <script>
-    import { BASE_URL, myUsername } from "../../stores/globalStore.js";
+    import { BASE_URL, isUserAdmin, myUsername } from "../../stores/globalStore.js";
     import { navigate } from "svelte-navigator";
     import showToastify from "../../stores/Toastify.js";
 
@@ -22,7 +22,9 @@
 
       if (response.ok) {
         const data = await response.json();
-        myUsername.set(username);
+        myUsername.set(data.username);
+        isUserAdmin.set(data.isAdmin);
+        console.log("Is "+ $myUsername + " admin?: " + $isUserAdmin)
         showToastify("Login successful");
         } else {
         showToastify("Login failed, try again");
