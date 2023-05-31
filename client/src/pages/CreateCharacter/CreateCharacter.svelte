@@ -3,8 +3,7 @@
     import { BASE_URL, myUsername } from "../../stores/globalStore";
     import Signin from "../Signin/Signin.svelte";
     import showToastify from "../../stores/Toastify";
-  import Dwarf from "../../components/Races/Dwarf.svelte";
-  import { barbarianDescription, druidDescription, dwarfDescription, elfDescription, humanDescription, wizardDescription } from "../../stores/descriptionStore";
+    import { barbarianDescription, druidDescription, dwarfDescription, elfDescription, humanDescription, wizardDescription } from "../../stores/descriptionStore";
 
     let characterName = ''
     let characterRace = '';
@@ -36,6 +35,10 @@
         };
     }
 
+    function errorMessage(){
+        showToastify("You dont have access here, please sign in")
+    }
+
 </script>
 
 
@@ -54,16 +57,13 @@
                 <p class="text-center mb-5">{elfDescription}</p>
                 <div class="font-small font-bold text-gray-900 mb-5 text-center">Human</div>
                 <p class="text-center mb-5">{humanDescription}</p>
-    
                 <h1 class="text-3xl font-medium title-font text-gray-900 mb-5 text-center">Classes</h1>
-    
                 <div class="font-small font-bold text-gray-900 mb-5 text-center">Barbarian</div>
                 <p class="text-center mb-5">{barbarianDescription}</p>
                 <div class="font-small font-bold text-gray-900 mb-5 text-center">Druid</div>
                 <p class="text-center mb-5">{druidDescription}</p>
                 <div class="font-small font-bold text-gray-900 mb-5 text-center">Wizard</div>
                 <p class="text-center mb-5">{wizardDescription}</p>
-                
               </div>
             </div>
             <div class="p-4 md:w-1/2 w-full">
@@ -104,7 +104,6 @@
                         </div>
                     </div>
                   </section>
-                
                 </div>
             </div>
           </div>
@@ -112,5 +111,6 @@
     </section>
 </section>
 {:else}
-<Signin/>
+    <Signin/>
+    {errorMessage()}
 {/if}

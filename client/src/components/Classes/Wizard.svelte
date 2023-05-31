@@ -1,20 +1,7 @@
 <script>
-    import Modal from "../Modal.svelte"
-
-    /*
-    let showModal = false;
-    <button on:click={() => (showModal = true)}> Show more info </button>
-<   Modal bind:showModal>
-      <h2 slot="header"> Barbarian	</h2>
-     <p>Slå folk i hovedet med 2 hånds våben!</p>
-    </Modal>
-    */
-
     const Features = "The Wizard is a master of arcane knowledge and spellcasting, delving into the secrets of the universe to wield magic. They are highly intelligent and skilled in manipulating the fundamental forces of magic. Wizards specialize in the study of spells and can cast a wide variety of magical effects.";
     const Bonuses = "Wizards possess vast knowledge of spells and can learn and cast a diverse range of magical effects. They are skilled in arcane rituals and can create magical scrolls and items. Wizards excel in deciphering ancient texts, unraveling magical mysteries, and wielding devastating spells in combat. With their spellbooks as their constant companion, they are always prepared for any magical challenge.";
     const Lore = "Wizards are the scholars and seekers of arcane knowledge, devoting their lives to studying the intricacies of magic and its many forms. They can be found in ancient towers, arcane libraries, and prestigious magical academies, pursuing enlightenment and the mastery of spellcraft. Wizards possess a deep understanding of the weave of magic, and their ability to harness and shape arcane energy makes them highly sought after and respected.";
-
-
 </script>
 
 <section class="text-gray-600 body-font bg-gray-300">

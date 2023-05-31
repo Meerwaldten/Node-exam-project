@@ -75,41 +75,16 @@ router.post('/deletecharacter', async (req, res) => {
         class: characterClass,
         username
       });
-      console.log("Character to delete: " + deletedCharacter)
 
       if (!deletedCharacter) {
-        // If no character was found, send a response indicating that the character was not found
         return res.status(404).json({ message: 'Character not found' });
       }
-  
-      // Character successfully deleted
       res.status(200).json({ message: 'Character deleted' });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
     }
   });
-/*
-router.post("/deletecharacter", async (req, res) => {
-    try {
-        const { characterId } = req.body;
-    
-        // Validate the characterId
-        if (!characterId) {
-          return res.status(400).json({ error: 'Invalid characterId' });
-        }
-    
-        // Delete the character from the database
-        await Character.findByIdAndDelete(characterId);
-    
-        // Return a success response
-        res.status(200).json({ message: 'Character deleted successfully' });
-      } catch (error) {
-        console.error('Error deleting character:', error);
-        res.status(500).json({ error: 'An error occurred while deleting the character' });
-      }
-});
-*/
 
 router.post("/signup", async (req, res) => {
     const {username, email, password} = req.body;
@@ -122,7 +97,6 @@ router.post("/signup", async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 10);
 
     const newUser = new userModel({email: email, username: username, password: hashPassword, isAdmin: false});
-    console.log("New user created with: " + newUser)
     await newUser.save();
     
     const mailOptions = {
@@ -159,8 +133,6 @@ router.post("/login", async (req, res) => {
 
     req.session.username = username;
     req.session.email = user.email;
-    console.log("Session email is: " + req.session.email);
-    console.log("Session username is: " + req.session.username);
 
     if(user.isAdmin){
         req.session.isAdmin = true

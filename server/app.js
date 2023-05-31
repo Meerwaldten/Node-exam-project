@@ -30,7 +30,6 @@ sessionStore.on('error', function (error) {
     console.log('Session store error:', error);
 });
 
-
 const sessionMiddleware = session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -45,7 +44,6 @@ app.use(express.json());
 
 app.use(userRouter);
 
-
 import http from "http";
 const server = http.createServer(app);
 
@@ -59,7 +57,6 @@ const io = new Server(server, {
     },
 });
 
-
 const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
 io.use(wrap(sessionMiddleware));
 
@@ -72,15 +69,11 @@ io.on("connection", (socket) => {
     socket.emit("initial suggestions", latestSuggestions);
 
     socket.on("character suggestion", (data) => {
-        console.log(data.message)
-        console.log(data.username)
-
         latestSuggestions.push(data);
 
-        if (latestSuggestions.length > 5) {
-            latestSuggestions.shift(); // Remove the oldest suggestion
+        if(latestSuggestions.length > 5) {
+            latestSuggestions.shift();
           }
-
         io.emit("user suggested a character", data)
     })
 
@@ -89,9 +82,6 @@ io.on("connection", (socket) => {
         console.log(data.username);
         io.emit("admin received suggestion", data)
     })
-
-
-
 });
 
 db;

@@ -8,7 +8,7 @@
     import CreateCharacter from "../src/pages/CreateCharacter/CreateCharacter.svelte";
     import FindCharacter from "./pages/FindCharacter/FindCharacter.svelte";
     import Suggestion from "./pages/Suggestion/Suggestion.svelte";
-  import Admin from "./pages/Admin/Admin.svelte";
+    import Admin from "./pages/Admin/Admin.svelte";
 </script>
 
 <Navbar/>

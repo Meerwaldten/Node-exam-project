@@ -3,8 +3,6 @@
     import { navigate } from "svelte-navigator";
     import showToastify from "../../stores/Toastify.js";
 
-    console.log("Current user logged in: " + $myUsername + " on signin");
-
     let username = '';
     let password = '';
     

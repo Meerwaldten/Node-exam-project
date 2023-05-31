@@ -1,19 +1,7 @@
 <script>
-    import Modal from "../Modal.svelte"
-
-    /*
-    let showModal = false;
-    <button on:click={() => (showModal = true)}> Show more info </button>
-<   Modal bind:showModal>
-      <h2 slot="header"> Barbarian	</h2>
-     <p>Slå folk i hovedet med 2 hånds våben!</p>
-    </Modal>
-    */
-
     const Features = "The Barbarian is a fierce warrior who taps into their primal instincts to unleash devastating attacks. They possess incredible strength and endurance, allowing them to shrug off wounds that would fell lesser warriors. Barbarians excel in close combat, wielding powerful melee weapons and unleashing furious rage upon their enemies.";
     const Bonuses = "Barbarians are known for their exceptional physical prowess. They have a high hit point pool, making them resilient and capable of withstanding significant damage. They possess unparalleled strength, granting them bonus damage with melee weapons and the ability to deliver devastating critical strikes. Barbarians can also enter a state of rage, increasing their damage output and resistance to damage."
     const Lore = "In the untamed wilderness and among fierce tribes, the Barbarians find their home. They hail from ancestral lands where survival depends on raw strength and primal instincts. These fierce warriors embrace their inner fury and channel it into battle, believing that true power lies in the heart of untamed rage. United by tribal bonds and fueled by an indomitable spirit, Barbarians are fearsome adversaries and unyielding allies."
-
 </script>
 
 <section class="text-gray-600 body-font bg-gray-300">

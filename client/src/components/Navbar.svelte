@@ -10,15 +10,13 @@
             });
 
             if (response.status === 200) {
-              localStorage.setItem("myUsername", "");
               myUsername.set("");
-              console.log("You've logged out")
               navigate("/");
             } else {
-                // Handle logout error
+                console.log("Something went wrong")
             }
         } catch (error) {
-            // Handle logout error
+            console.log(error)
         }
     }
 

@@ -1,16 +1,4 @@
 <script>
-    import Modal from "../Modal.svelte"
-    import { myUsername } from "../../stores/globalStore";
-
-    /*
-    let showModal = false;
-    <button on:click={() => (showModal = true)}>Show more info </button>
-    <Modal bind:showModal>
-    	<h2 slot="header"> Dwarf </h2>
-      <p>Dwarfs er fucking nice og voldsomme og Ralle sutter!</p>
-    </Modal>
-    */
-
     const Features = "Dwarves are sturdy and resilient beings known for their exceptional craftsmanship and unwavering determination. They possess incredible endurance and are skilled in the art of combat, making them formidable warriors. Dwarves have a natural affinity for stonework and mining, and they excel at crafting powerful weapons and armor.";
     const Bonuses = "Dwarves have several inherent advantages that make them formidable adventurers. They have a natural resistance to poison and are skilled in resisting magical effects. Dwarves possess darkvision, allowing them to see in dim light, and they have a keen sense of direction underground. They are also known for their expertise with a variety of weapons and their exceptional ability to withstand physical punishment.";
     const Lore = "Dwarves are a proud and ancient race that dwells deep within the mountains and underground cities. They are renowned for their craftsmanship, forging exquisite weapons, armor, and intricate works of art. Dwarves value honor, loyalty, and tradition, and their strong sense of community and kinship is reflected in their close-knit clans. Despite their stern and stoic nature, Dwarves are known to enjoy good food, strong drink, and lively celebrations.";

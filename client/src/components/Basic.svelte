@@ -1,11 +1,4 @@
-<script>
-    import Modal from "./Modal.svelte";
-
-    
-    let showModal = false;
-  
-
-
+<script> 
     const description1 = "Dungeons and Dragons (D&D) is a tabletop role-playing game where players create characters and embark on exciting adventures in a fantasy world. It is known for its imaginative storytelling, cooperative gameplay, and endless possibilities.";
     const description2 = "Step into a realm of magic, monsters, and mystery where anything is possible. Dungeons and Dragons allows you to build rich narratives, making decisions that influence the course of the story. Engage in imaginative storytelling with your friends, forging bonds, and facing challenges together in a shared adventure.";
     const description3 = "In D&D, you have the power to create your own character, tailoring their appearance, abilities, and backstory to match your vision. Choose from a variety of races and classes, each offering unique traits and skills. Customize your character's personality, motivations, and alignment to bring them to life in the vibrant world of D&D.";
