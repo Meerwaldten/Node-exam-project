@@ -9,7 +9,7 @@ import helmet from "helmet";
 
 const app = express();
 
-app.use(helmet());
+//app.use(helmet());
 
 const corsMiddleware = cors({
     origin: true,
@@ -34,7 +34,11 @@ const sessionMiddleware = session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false},
+    cookie: { 
+            secure: false,
+            maxAge: 30 * 60 * 1000,
+            rolling: true
+    },
     store: sessionStore,
 });
 
@@ -74,24 +78,20 @@ io.on("connection", (socket) => {
 
     socket.on("character suggestion", (data) => {
         latestSuggestions.push(data);
-        console.log(latestSuggestions);
 
         if(latestSuggestions.length > 5) {
             latestSuggestions.shift();
           }
         io.emit("user suggested a character", data)
-    })
+    });
 
 
     socket.emit("initial admin suggestions", latestAdminSuggestions);
 
     socket.on("suggestion to admin", (data) =>{
         latestAdminSuggestions.push(data)
-        console.log(latestAdminSuggestions)
-        console.log(data.text);
-        console.log(data.username);
         io.emit("admin received suggestion", data)
-    })
+    });
 });
 
 db;

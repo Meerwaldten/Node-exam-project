@@ -1,7 +1,8 @@
 <script>
     import { onMount } from "svelte";
     import WelcomePage from "../Welcome/WelcomePage.svelte";
-    import { BASE_URL, myUsername, isUserAdmin } from "../../stores/globalStore";
+    import { BASE_URL, myUsername, isUserAdmin} from "../../stores/globalStore";
+    
 
     onMount(async() => {
         try {

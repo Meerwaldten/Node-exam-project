@@ -2,9 +2,9 @@ import Toastify from 'toastify-js';
 
 function showToastify(message){
     const toast = Toastify({
-        position: 'center',
+        position: "right",
         duration: 3000,
-        gravity: 'top',
+        gravity: "top",
         text: message,
         backgroundColor: '#FF6347'
     });
